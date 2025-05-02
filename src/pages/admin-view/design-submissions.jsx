@@ -50,7 +50,7 @@ const DesignSubmissions = () => {
   useEffect(() => {
     const fetchDesigns = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/design-submissions');
+        const response = await axios.get('https://customteesserver.onrender.com/api/design-submissions');
         setDesigns(response.data.data || []);
       } catch (error) {
         setError(error.message);
@@ -108,7 +108,7 @@ const DesignSubmissions = () => {
 
   const handleRejectDesign = async (designId) => {
     try {
-      await axios.delete(`http://localhost:5000/api/design-submissions/${designId}`);
+      await axios.delete(`https://customteesserver.onrender.com/api/design-submissions/${designId}`);
       setDesigns(prevDesigns => prevDesigns.filter(design => design._id !== designId));
       toast({
         title: 'Design Rejected',
