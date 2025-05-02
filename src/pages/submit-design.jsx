@@ -88,7 +88,7 @@ const SubmitDesign = () => {
       formDataImage.append('my_file', image);
 
       // Upload image to Cloudinary
-      const responseImage = await fetch('http://localhost:5000/api/admin/products/upload-image', {
+      const responseImage = await fetch('https://customteesserver.onrender.com/api/admin/products/upload-image', {
         method: 'POST',
         body: formDataImage,
       });
@@ -114,7 +114,7 @@ const SubmitDesign = () => {
 
     // Submit the design submission
     try {
-      const response = await fetch('http://localhost:5000/api/submit-design', {
+      const response = await fetch('https://customteesserver.onrender.com/api/submit-design', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
